@@ -5,12 +5,13 @@
 
 ## Usage
 
-### 1.Init
+### 1.Init and Show
 ```
 SortOptionView  *sortOptionView = [[SortOptionView alloc] init];
 sortOptionView.dataSource = self;
 sortOptionView.delegate = self;
 [aSuperView addSubview: sortOptionView];
+[sortOptionView show];
 ```
 ### 2. Implement the method of 'SortOptionViewDataSource' protocol
 
