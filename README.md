@@ -3,16 +3,16 @@
 |Version:|1.0|
 |---|---| 
 
-##Usage
+## Usage
 
-###1.Init
+### 1.Init
 ```
 SortOptionView  *sortOptionView = [[SortOptionView alloc] init];
 sortOptionView.dataSource = self;
 sortOptionView.delegate = self;
 [aSuperView addSubview: sortOptionView];
 ```
-###2. Implement the method of 'SortOptionViewDataSource' protocol
+### 2. Implement the method of 'SortOptionViewDataSource' protocol
 
 ```
 - (NSArray *)titleArrayForSortOptionView:(SortOptionView *)sortOptionView
@@ -22,7 +22,7 @@ sortOptionView.delegate = self;
 
 ```
 
-###.Implement the method of 'SortOptionViewDelegate' protocol
+### 3.Implement the method of 'SortOptionViewDelegate' protocol
 ```
 - (void)sortOptionView:(SortOptionView *)sortOptionView didClickedItemAtIndex:(NSUInteger)index sortOption:(SortOptionType)sortOption
 {
@@ -46,7 +46,7 @@ sortOptionView.delegate = self;
 }
 ```
 
-##Installation
+## Installation
 1.**Run 'git clone'**
 
 ```
