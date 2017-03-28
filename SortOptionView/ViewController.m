@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "SortOptionView.h"
 
-@interface ViewController ()
+@interface ViewController ()<SortOptionViewDataSource,SortOptionViewDelegate>
+
+@property (nonatomic,strong) SortOptionView *sortOptionView;
 
 @end
 
@@ -17,6 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor grayColor];
+    
+    self.sortOptionView.frame = CGRectMake(20, 100, 300, 40);
+    [self.sortOptionView show];
 }
 
 
@@ -25,5 +32,42 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - getter
+- (SortOptionView *)sortOptionView
+{
+    if (_sortOptionView == nil) {
+        _sortOptionView = [[SortOptionView alloc] init];
+        _sortOptionView.backgroundColor = [UIColor whiteColor];
+        _sortOptionView.dataSource = self;
+        _sortOptionView.delegate = self;
+        [self.view addSubview:_sortOptionView];
+    }
+    return _sortOptionView;
+}
+
+#pragma mark - delegate && datasource
+- (NSArray *)titleArrayForSortOptionView:(SortOptionView *)sortOptionView
+{
+    return @[@"价格",@"权益伙伴",@"销量"];
+}
+
+- (void)sortOptionView:(SortOptionView *)sortOptionView didClickedItemAtIndex:(NSUInteger)index sortOption:(SortOptionType)sortOption
+{
+    switch (sortOption) {
+        case SortOptionNormal:
+            NSLog(@"SortOptionNormal");
+            break;
+        case SortOptionUp:
+            NSLog(@"SortOptionUp");
+            break;
+        case SortOptionDown:
+            NSLog(@"SortOptionDown");
+            break;
+        default:
+            break;
+    }
+    
+    NSLog(@"index : %lu",index);
+}
 
 @end
