@@ -183,6 +183,14 @@
     return _titleNormalColor;
 }
 
+- (UIColor *)titleSelectedColor
+{
+    if (_titleSelectedColor == nil) {
+        _titleSelectedColor = [UIColor orangeColor];
+    }
+    return _titleSelectedColor;
+}
+
 - (UIColor *)seperateLineColor
 {
     if (_seperateLineColor == nil) {

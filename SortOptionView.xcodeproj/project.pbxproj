@@ -22,6 +22,7 @@
 		753A2E321E8A3EA400E921F3 /* Sort_Normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 753A2E301E8A3EA400E921F3 /* Sort_Normal@3x.png */; };
 		753A2E361E8A516100E921F3 /* UIButton+Layer.m in Sources */ = {isa = PBXBuildFile; fileRef = 753A2E341E8A516100E921F3 /* UIButton+Layer.m */; };
 		753A2E3F1E8A57F400E921F3 /* UIButton+ImageDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 753A2E3E1E8A57F400E921F3 /* UIButton+ImageDirection.m */; };
+		7597455A1E8E41E50060BA20 /* guide.gif in Resources */ = {isa = PBXBuildFile; fileRef = 759745591E8E41E50060BA20 /* guide.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		753A2E341E8A516100E921F3 /* UIButton+Layer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Layer.m"; sourceTree = "<group>"; };
 		753A2E3D1E8A57F400E921F3 /* UIButton+ImageDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageDirection.h"; sourceTree = "<group>"; };
 		753A2E3E1E8A57F400E921F3 /* UIButton+ImageDirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageDirection.m"; sourceTree = "<group>"; };
+		759745591E8E41E50060BA20 /* guide.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = guide.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		753A2E1E1E8A3B8C00E921F3 /* SortOptionView */ = {
 			isa = PBXGroup;
 			children = (
+				759745591E8E41E50060BA20 /* guide.gif */,
 				753A2E371E8A572600E921F3 /* UIButton+ImageDirection */,
 				753A2E351E8A516100E921F3 /* UIButton+Layer */,
 				753A2E221E8A3CD400E921F3 /* Icon */,
@@ -212,6 +215,7 @@
 				753A2E121E8A3B2500E921F3 /* Main.storyboard in Resources */,
 				753A2E2D1E8A3CD400E921F3 /* Sort_Up@2x.png in Resources */,
 				753A2E311E8A3EA400E921F3 /* Sort_Normal@2x.png in Resources */,
+				7597455A1E8E41E50060BA20 /* guide.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
