@@ -5,6 +5,9 @@
 |1.0|2017.03.28|The first Version|
 |1.1|2017.03.31|-imageShowStatusArrayForSortOptionView:|
 
+## Style
+![guide](https://github.com/GGSDU/SortOptionView/blob/master/SortOptionView/SortOptionView/guide.gif)
+
 ## Usage
 
 ### 1.Init and Show
