@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     self.sortOptionView.frame = CGRectMake(20, 100, 300, 40);
     [self.sortOptionView show];
@@ -41,6 +41,10 @@
         _sortOptionView.dataSource = self;
         _sortOptionView.delegate = self;
         [self.view addSubview:_sortOptionView];
+        
+        _sortOptionView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        _sortOptionView.layer.borderWidth = 1;
+        _sortOptionView.layer.cornerRadius = 5;
     }
     return _sortOptionView;
 }
