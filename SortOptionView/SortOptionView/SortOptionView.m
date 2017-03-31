@@ -52,6 +52,7 @@
     
     aSender.selected = true;
     self.currentItemIndex = aSender.tag - BUTTON_BASE_TAG;
+    NSLog(@"%ld",self.currentItemIndex);
     switch (self.sortOption) {
         case SortOptionUp:
         {
@@ -68,7 +69,7 @@
             self.sortOption = SortOptionUp;
             NSNumber *imageShowStatus = self.imageShowStatusArray[self.currentItemIndex];
             if (imageShowStatus.boolValue) {
-                [aSender setImage:self.downImage forState:UIControlStateSelected];
+                [aSender setImage:self.upImage forState:UIControlStateSelected];
             }
         }   break;
         default:
