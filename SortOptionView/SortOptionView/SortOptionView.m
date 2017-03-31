@@ -15,6 +15,7 @@
 
 @property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,strong) NSMutableArray *titleArray;
+@property (nonatomic,strong) NSMutableArray *imageShowStatusArray;
 @property (nonatomic,assign) NSUInteger itemDisplayCountMax;
 @property (nonatomic,assign) CGFloat buttonWidth;
 
@@ -99,7 +100,12 @@
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             button.frame = CGRectMake(self.buttonWidth * i, 0, self.buttonWidth, self.scrollView.bounds.size.height);
             button.titleLabel.font = self.titleFont;
-            [button setImage:self.normalImage forState:UIControlStateNormal];
+            
+            NSNumber *imageShowStatus = self.imageShowStatusArray[i];
+            if (imageShowStatus.boolValue) {
+                [button setImage:self.normalImage forState:UIControlStateNormal];
+            }
+            
             [button setTitleColor:self.titleNormalColor forState:UIControlStateNormal];
             [button setTitleColor:self.titleSelectedColor forState:UIControlStateSelected];
             
@@ -128,7 +134,32 @@
     if ([self.dataSource respondsToSelector:@selector(titleArrayForSortOptionView:)]) {
         NSArray *array = [self.dataSource titleArrayForSortOptionView:self];
         if (array.count > 0) {
+            [self.titleArray removeAllObjects];
             [self.titleArray addObjectsFromArray:array];
+        }
+    }
+    
+    // 一开始初始化 imageShowStatusArray 所有 item 都为 true
+    for (NSInteger index = 0; index < self.titleArray.count; index++) {
+        NSNumber *imageShowStatus = [NSNumber numberWithBool:true];
+        [self.imageShowStatusArray addObject:imageShowStatus];
+    }
+    
+    // 改变 imageShowStatusArray
+    if ([self.dataSource respondsToSelector:@selector(imageShowStatusArrayForSortOptionView:)]) {
+        NSArray *array = [self.dataSource imageShowStatusArrayForSortOptionView:self];
+        
+        if (array.count > 0) {
+            NSInteger loopCount = array.count >= self.titleArray.count ? self.titleArray.count : array.count;
+            for (NSInteger i = 0; i < loopCount; i++) {
+                id value = array[i];
+                if ([value isKindOfClass:[NSNumber class]]) {
+                    [self.imageShowStatusArray setObject:value atIndexedSubscript:i];
+                } else if ([value isKindOfClass:[NSString class]]) {
+                    NSString *valueString = (NSString *)value;
+                    [self.imageShowStatusArray setObject:[NSNumber numberWithBool:valueString.boolValue] atIndexedSubscript:i];
+                }
+            }
         }
     }
 }
@@ -194,6 +225,14 @@
         _titleArray = [[NSMutableArray alloc] initWithCapacity:0];
     }
     return _titleArray;
+}
+
+- (NSMutableArray *)imageShowStatusArray
+{
+    if (_imageShowStatusArray == nil) {
+        _imageShowStatusArray = [[NSMutableArray alloc] initWithCapacity:0];
+    }
+    return _imageShowStatusArray;
 }
 
 @end

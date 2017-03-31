@@ -51,6 +51,11 @@
     return @[@"价格",@"权益伙伴",@"销量"];
 }
 
+- (NSArray *)imageShowStatusArrayForSortOptionView:(SortOptionView *)sortOptionView
+{
+    return @[@"0",@"1",@"1"];
+}
+
 - (void)sortOptionView:(SortOptionView *)sortOptionView didClickedItemAtIndex:(NSUInteger)index sortOption:(SortOptionType)sortOption
 {
     switch (sortOption) {
