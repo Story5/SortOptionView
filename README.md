@@ -1,7 +1,9 @@
 # SortOptionView
 
-|Version:|1.0|
-|---|---| 
+|Version|Commit Data|New In Version|
+|---|---|---|
+|1.0|2017.03.28|The first Version|
+|1.1|2017.03.31|-imageShowStatusArrayForSortOptionView:|
 
 ## Usage
 
@@ -15,12 +17,20 @@ sortOptionView.delegate = self;
 ```
 ### 2. Implement the method of 'SortOptionViewDataSource' protocol
 
+#### (1)Return the every button's title
 ```
 - (NSArray *)titleArrayForSortOptionView:(SortOptionView *)sortOptionView
 {
     return @[@"SortTitle1",@"SortTitle2",@"SortTitle3"];
 }
 
+```
+#### (2)Return the every button's image show status to determine show the image or not
+```
+- (NSArray *)imageShowStatusArrayForSortOptionView:(SortOptionView *)sortOptionView
+{
+    return @[@"0",@"1",@"1"];
+}
 ```
 
 ### 3.Implement the method of 'SortOptionViewDelegate' protocol
