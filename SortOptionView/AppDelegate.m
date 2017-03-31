@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "SortOptionView-Swift.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    UITabBarController *tb = [[UITabBarController alloc] init];
+    ViewController *item1 = [[ViewController alloc] init];
+    item1.title = @"item1";
+    RightBindSelectVC *item2 = [[RightBindSelectVC alloc] init];
+    item2.title = @"item2";
+    tb.viewControllers = @[item1,item2];
+    self.window.rootViewController = tb;
+    
+    
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

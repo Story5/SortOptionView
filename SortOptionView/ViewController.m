@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.title = @"item1";
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.sortOptionView.frame = CGRectMake(20, 100, 300, 40);

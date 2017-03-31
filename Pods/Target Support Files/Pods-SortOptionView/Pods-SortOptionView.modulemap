@@ -1,0 +1,6 @@
+framework module Pods_SortOptionView {
+  umbrella header "Pods-SortOptionView-umbrella.h"
+
+  export *
+  module * { export * }
+}
