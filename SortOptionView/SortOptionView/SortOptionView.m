@@ -54,14 +54,23 @@
     self.currentItemIndex = aSender.tag - BUTTON_BASE_TAG;
     switch (self.sortOption) {
         case SortOptionUp:
+        {
             self.sortOption = SortOptionDown;
-            [aSender setImage:self.downImage forState:UIControlStateSelected];
+            NSNumber *imageShowStatus = self.imageShowStatusArray[self.currentItemIndex];
+            if (imageShowStatus.boolValue) {
+                [aSender setImage:self.downImage forState:UIControlStateSelected];
+            }
+        }
             break;
         case SortOptionDown:
         case SortOptionNormal:
+        {
             self.sortOption = SortOptionUp;
-            [aSender setImage:self.upImage forState:UIControlStateSelected];
-            break;
+            NSNumber *imageShowStatus = self.imageShowStatusArray[self.currentItemIndex];
+            if (imageShowStatus.boolValue) {
+                [aSender setImage:self.downImage forState:UIControlStateSelected];
+            }
+        }   break;
         default:
             break;
     }

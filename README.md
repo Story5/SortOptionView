@@ -65,3 +65,11 @@ git clone https://github.com/GGSDU/SortOptionView
 ```
 
 2.**Import the `SortOptionView` folder to your project.**
+
+## Code with Us together
+If you'd like to code with us and make the project better,contact me and join
+ us.
+ 
+- QQ : 337995545
+- Email : story5@yeah.net
+- [CSDN Blog](http://blog.csdn.net/story51314)
