@@ -28,6 +28,7 @@ typedef enum : NSUInteger {
 
 @protocol SortOptionViewDelegate <NSObject>
 
+@optional
 - (void)sortOptionView:(SortOptionView *)sortOptionView didClickedItemAtIndex:(NSUInteger)index sortOption:(SortOptionType)sortOption;
 
 @end
