@@ -39,6 +39,30 @@
     return self;
 }
 
+#pragma mark - public methods
+- (void)setCurrentSelectedItem:(NSUInteger)index
+{
+    if (!_shown) {
+        [self show];
+    }
+    
+    UIButton *button = [self.scrollView viewWithTag:index + BUTTON_BASE_TAG];
+    [self buttonClicked:button];
+}
+
+- (void)show
+{
+    if (_shown) {
+        return;
+    }
+    _shown = true;
+    
+    
+    [self initData];
+    
+    [self initButtonItem];
+}
+
 #pragma mark - event
 - (void)buttonClicked:(UIButton *)aSender
 {
@@ -82,18 +106,7 @@
     }
 }
 
-- (void)show
-{
-    if (_shown) {
-        return;
-    }
-    _shown = true;
-    
-    
-    [self initData];
-    
-    [self initButtonItem];
-}
+
 
 - (void)initButtonItem
 {

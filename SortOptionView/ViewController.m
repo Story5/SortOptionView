@@ -25,6 +25,7 @@
     
     self.sortOptionView.frame = CGRectMake(20, 100, 300, 40);
     [self.sortOptionView show];
+    [self.sortOptionView setCurrentSelectedItem:1];
 }
 
 

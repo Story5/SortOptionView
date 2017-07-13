@@ -42,9 +42,13 @@ typedef enum : NSUInteger {
 @property (nonatomic,strong) UIImage *upImage;
 @property (nonatomic,strong) UIImage *downImage;
 
+//@property (nonatomic,assign) NSUInteger defaultSelected;
+
 @property (nonatomic,assign) id<SortOptionViewDataSource>dataSource;
 @property (nonatomic,assign) id<SortOptionViewDelegate>delegate;
 
 - (void)show;
+// 设置默认选中按钮
+- (void)setCurrentSelectedItem:(NSUInteger)index;
 
 @end
