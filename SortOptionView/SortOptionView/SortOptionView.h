@@ -18,7 +18,10 @@ typedef enum : NSUInteger {
 
 @protocol SortOptionViewDataSource <NSObject>
 
+@required
 - (NSArray *)titleArrayForSortOptionView:(SortOptionView *)sortOptionView;
+
+@optional
 - (NSArray *)imageShowStatusArrayForSortOptionView:(SortOptionView *)sortOptionView;
 
 @end
