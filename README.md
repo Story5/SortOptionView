@@ -4,6 +4,7 @@
 |---|---|---|
 |1.0|2017.03.28|The first Version|
 |1.1|2017.03.31|-imageShowStatusArrayForSortOptionView:|
+|1.2|2017.07.13|-setCurrentSelectedItem:|
 
 ## Style
 ![guide](https://github.com/GGSDU/SortOptionView/blob/master/SortOptionView/SortOptionView/guide.gif)
@@ -53,11 +54,15 @@ sortOptionView.delegate = self;
         default:
             break;
     }
-    
+
     NSLog(@"index : %lu",index);
-    
+
     // do something by judge the index and sortOption
 }
+```
+### 4.Set default selected item
+```
+[sortOptionView setCurrentSelectedItem:0];
 ```
 
 ## Installation
@@ -72,7 +77,7 @@ git clone https://github.com/GGSDU/SortOptionView
 ## Code with Us together
 If you'd like to code with us and make the project better,contact me and join
  us.
- 
+
 - QQ : 337995545
 - Email : story5@yeah.net
 - [CSDN Blog](http://blog.csdn.net/story51314)
